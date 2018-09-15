@@ -1,0 +1,546 @@
+@import "fonts"
+
+$accent: #435993
+
+*
+	margin: 0px
+	padding: 0px
+p
+	margin: 0
+a
+	text-decoration: none
+	color: inherit
+	&:hover
+		color: $accent
+		text-decoration: none
+	&:focus, &:active
+		outline: none
+
+
+body
+	min-width: 320px
+	position: relative
+	line-height: 1.75
+	font-family: Roboto
+	overflow-x: hidden
+	background-color: #ffffff
+	color: #1c1c1c
+	opacity: 1
+	width: 100%
+
+
+.inp, .txarea
+	border: 1px solid rgb(229, 229, 229)
+	background-color: rgba(217, 217, 217, 0)
+	width: 520px
+	height: 60px
+	border-radius: 4px
+	text-align: center
+	font-size: 24px
+	color: #1c1c1c
+	margin: 0 auto
+	display: block
+	box-sizing: border-box
+	&:focus
+		border: 1px solid $accent
+
+
+
+
+.container
+	max-width: 768px
+	margin: 0 auto
+
+.header
+	position: fixed
+	width: 100%
+	background-color: #ffffff
+	border-bottom: 1px solid #d9d9d9
+	z-index: 100
+	.headerInner
+		height: 80px
+		display: flex
+		align-items: center
+		justify-content: center
+		.navbar
+			.navbarInner
+				display: flex
+				position: relative
+				top: 2px
+				.part
+					font-weight: 300
+					font-size: 14px
+					margin-right: 76px
+					&:last-child
+						margin-right: 0
+		.hamburger
+			display: none
+			width: 32px
+			height: 32px
+			svg
+				fill: #adadad
+
+.blank
+	padding-top: 80px
+	.image
+		height: 160px
+		background-image: url('../img/blankBg.jpg')
+		background-size: cover
+		.gradient
+			height: 100%
+			background: -webkit-linear-gradient(top, rgba(229,229,229,0) 0%,rgba(255,255,255,1) 100%)
+	.blankInner
+		.mainTitle
+			font-size: 70px
+			font-weight: 100
+			color: #000000
+			text-align: center
+			position: relative
+			top: -40px
+			line-height: 1
+		.personalInfo
+			background-image: url(../img/personalInfo.svg)
+			width: 47px
+			height: 47px
+			background-size: cover
+			display: block
+			margin: 26px auto 0 auto
+		.subTitle
+			font-size: 30px
+			font-weight: 300
+			text-align: center
+			margin-top: 15px
+		.infoBlock
+			margin-top: 36px
+			.part
+				position: relative
+				margin-bottom: 23px
+				.floatingLabel
+					pointer-events: none
+					position: absolute
+					top: 0
+					left: 0
+					width: 100%
+					height: 100%
+					text-align: center
+					display: flex
+					align-items: center
+					justify-content: center
+					span
+						transition: 0.3s ease all
+						font-size: 24px
+						color: #c8c8c8
+						line-height: 1
+				.inp
+					padding: 0 10px
+					box-sizing: border-box
+					&:focus, &:visited, &:active, &:valid
+						padding-top: 17px
+						box-sizing: border-box
+						+ .floatingLabel
+							span
+								font-size: 14px
+								color: #adadad
+								margin-top: -27px
+				.select
+					border: 1px solid rgb(229, 229, 229)
+					background-color: rgba(217, 217, 217, 0)
+					width: 320px
+					height: 60px
+					border-radius: 4px
+					text-align: center
+					font-size: 24px
+					color: #1c1c1c
+					margin: 0 auto
+					position: relative
+					cursor: pointer
+					.current
+						position: relative
+						width: 100%
+						height: 100%
+						font-size: 24px
+						color: #c8c8c8
+						text-align: center
+						display: flex
+						align-items: center
+						justify-content: center
+						.arrow
+							position: absolute
+							background-image: url('../img/arrow.svg')
+							width: 13px
+							height: 8px
+							right: 18px
+							top: 25px
+							transition: 0.3s ease all
+					.list
+						display: none
+						position: absolute
+						top: calc(100% + 5px)
+						width: 100%
+						left: 0
+						z-index: 10
+						//padding: 30px 0
+						box-sizing: border-box
+						height: 300px
+						overflow: hidden
+						overflow-y: scroll
+						background-color: #ffffff
+						box-shadow: 0px 3px 8px 0px rgba(0, 0, 0, 0.2)
+						li
+							list-style-type: none
+							flex-wrap: 300
+							font-size: 20px
+							color: $accent
+							cursor: pointer
+							&:first-child
+								margin-top: 30px
+							&:last-child
+								margin-bottom: 30px
+		.experience
+			.icon
+				background-image: url('../img/experience.svg')
+				width: 47px
+				height: 47px
+				margin: 73px auto 0 auto
+			.experienceInner
+				margin-top: 36px
+				display: flex
+				.column
+					width: 196px
+					margin-right: 82px
+					&:nth-child(2)
+						margin-right: 85px
+					&:last-child
+						margin-right: 0
+					.part
+						display: flex
+						align-items: center
+						cursor: pointer
+						margin-bottom: 7px
+						&:hover
+							cursor: pointer
+							.box
+								.customBox
+									background-color: #e9efff
+						.box
+							position: relative
+							width: 22px
+							height: 23px
+							cursor: pointer
+							input
+								width: 100%
+								height: 100%
+								cursor: pointer
+							.customBox
+								top: 0
+								width: 100%
+								height: 100%
+								border: 1px solid rgb(67, 89, 147)
+								background-color: rgb(255, 255, 255)
+								border-radius: 3px
+								display: flex
+								align-items: center
+								justify-content: center
+								pointer-events: none
+								position: absolute
+								box-sizing: border-box
+								.icon
+									display: none
+									background-image: url('../img/arrowInput.png')
+									width: 13px
+									height: 9px
+									margin: 0
+							.customBox.active
+								background-color: $accent
+								.icon
+									display: block
+						.name
+							font-size: 16px
+							font-weight: 300
+							color: #000000
+							margin-left: 10px
+							cursor: pointer
+		.jsLevel
+			margin-top: 125px
+			.icon
+				background-image: url('../img/jsLevel.svg')
+				width: 47px
+				height: 47px
+				margin: 0 auto
+			.jsLevelInner
+				margin-top: 84px
+				.line.active1 
+					&:before
+						width: 0
+				.line.active2 
+					&:before
+						width: 184px
+				.line.active3
+					&:before
+						width: 384px
+				.line.active4
+					&:before
+						width: 100%
+				.line
+					position: relative
+					height: 14px
+					background-color: #e8e8e8
+					&:before
+						content: ''
+						transition: 0.3s ease all
+						height: 14px
+						width: 100%
+						position: absolute
+						left: 0
+						top: 0
+						background-image: -moz-linear-gradient( 0deg, rgb(204,177,241) 0%, rgb(67,89,147) 100%)
+						background-image: -webkit-linear-gradient( 0deg, rgb(204,177,241) 0%, rgb(67,89,147) 100%)
+						background-image: -ms-linear-gradient( 0deg, rgb(204,177,241) 0%, rgb(67,89,147) 100%)
+					&:after
+						content: ''
+						position: absolute
+						top: -10px
+						left: 0
+						width: 100%
+						height: 14px
+						background-color: #ffffff
+						transform: rotate(-0.6deg)
+					.levelLine
+						width: 100%
+						position: absolute
+						left: 0
+						height: 40px
+						top: -52px
+						display: flex
+						justify-content: space-between
+						.someLevel
+							position: relative
+							display: flex
+							align-items: flex-end
+							cursor: pointer
+							&:nth-child(2)
+								left: 33px
+							&:nth-child(3)
+								 left: 27px
+							label
+								font-size: 13px
+								font-weight: 300
+								color: #2e211c
+								line-height: 19px
+							.inputBlock
+								z-index: 11
+								position: absolute
+								top: 0
+								.box
+									position: relative
+									width: 130px
+									height: 80px
+									input
+										width: 100%
+										height: 100%
+										opacity: 0
+										cursor: pointer
+							.verticalLine
+								position: absolute
+								z-index: 12
+								top: calc(100%)
+								left: 0
+								width: 1px
+								height: 15px
+								border-left: 1px dashed #b3b3b3
+								.white
+									position: absolute
+									top: 100%
+									left: -0.5px
+									width: 1px
+									height: 10px
+									background-color: #ffffff
+							.verticalLine.right
+								left: 100%
+							.verticalLine.first
+								height: 19px
+						.point
+							transition: 0.3s ease all
+							position: absolute
+							top: calc(100% + 33px)
+							left: calc(50% - 11.5px)
+							background-image: url('../img/point.svg')
+							width: 23px
+							height: 26px
+						.point.active1 
+							left: calc(0% - 11.5px)
+						.point.active2 
+							left: calc(185px - 11.5px)
+						.point.active3
+							left: calc(385px - 11.5px)
+						.point.active4
+							left: calc(100% - 11.5px)
+		.about
+			padding-bottom: 75px
+			margin-top: 103px
+			.icon
+				background-image: url('../img/about.svg')
+				width: 47px
+				height: 47px
+				margin: 0 auto
+			.subTitle
+				margin-top: 17px
+			.text
+				font-size: 16px
+				font-weight: 300
+				text-align: center
+				line-height: 24px
+				max-width: 500px
+				display: block
+				margin: 3px auto 0 auto
+			.txarea
+				width: 520px
+				min-height: 180px
+				border-radius: 5px
+				display: block
+				resize: none
+				margin: 38px auto 0 auto
+				box-sizing: border-box
+				font-size: 20px
+				text-align: left
+				padding: 18px 24px
+				font-weight: normal
+				color: #1c1c1c
+				&::-webkit-input-placeholder
+					color: #c8c8c8
+			.btn
+				background-color: $accent
+				width: 116px
+				height: 51px
+				color: #ffffff
+				font-size: 16px
+				font-weight: 300
+				border-radius: 10px
+				border: none
+				display: block
+				margin: 69px auto 0 auto
+				cursor: pointer
+
+.header.mobile
+	.headerInner
+		justify-content: flex-end
+		flex-wrap: wrap
+		.hamburger
+			display: block
+			order: 0
+		.navbar
+			display: none
+			order: 1
+			width: 100%
+			.navbarInner
+				display: flex
+				flex-direction: column
+				.part
+					margin-right: 0
+					text-align: center
+
+
+
+@media only screen and (max-width: 768px)
+	.inp, .txarea, .blank .blankInner .about .txarea, .blank .blankInner .infoBlock .part .select
+		width: 100%
+	.blank .blankInner .jsLevel .jsLevelInner 
+		display: flex
+		justify-content: center
+		.line
+			width: 14px
+			height: 648px
+			margin-left: 200px
+			&:after
+				left: -11px
+				top: 0
+				width: 14px
+				height: 648px
+				transform: rotate(-0.6deg)
+			&:before
+				left: 0
+				top: auto
+				bottom: 0
+				width: 14px
+				height: 100%
+			.levelLine
+				height: 100%
+				width: 200px
+				left: -250px
+				top: 0
+				flex-direction: column-reverse
+				align-items: flex-end
+				.someLevel
+					label
+						text-align: right
+					.verticalLine
+						height: 1px
+						width: 35px
+						top: calc(100% - 8px)
+						left: calc(100% + 5px)
+						border-left: none
+						border-bottom: 1px dashed #b3b3b3
+					.verticalLine.first
+						width: 35px
+						height: 1px
+					.verticalLine.right
+						top: calc(100% - 17px)
+						width: 40px
+						left: calc(100% + 5px)
+				.point
+					left: auto
+					right: -90px
+					top: auto
+					bottom: 0
+					transform: rotate(-90deg)
+				.point.active1
+					left: auto
+					bottom: calc(0% - 11.5px)
+				.point.active2
+					left: auto
+					bottom: calc(205px - 11.5px)
+				.point.active3
+					left: auto
+					bottom: calc(420px - 11.5px)
+				.point.active4
+					left: auto
+					bottom: calc(100% - 11.5px)
+				.someLevel:nth-child(2), .someLevel:nth-child(3)
+					left: 0
+		.line.active1 
+			&:before
+				height: 0
+				width: 14px
+		.line.active2 
+			&:before
+				height: 205px
+				width: 14px
+		.line.active3
+			&:before
+				height: 420px
+				width: 14px
+		.line.active4
+			&:before
+				height: 100%
+				width: 14px
+	.blank .blankInner .experience .experienceInner
+		flex-direction: column
+		align-items: center
+		.column
+			margin-right: 0
+			&:nth-child(2)
+				margin-right: 0
+	.blank
+		padding-top: 53px
+	.header
+		height: auto
+		.headerInner
+			height: auto
+			align-items: center
+			padding: 10px 0
+
+	.container
+		padding: 0 10px
+		box-sizing: border-box
+
+
